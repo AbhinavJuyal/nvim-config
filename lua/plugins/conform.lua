@@ -1,0 +1,38 @@
+return {}
+-- local format_utils = require("utils.format")
+--
+-- return {
+--   "stevearc/conform.nvim",
+--   opts = function(_, opts)
+--     opts.formatters_by_ft = (function()
+--       local result = {}
+--       for _, ft in ipairs(format_utils.filetypes_with_dynamic_formatter) do
+--         result[ft] = format_utils.biome_or_prettier
+--       end
+--       return result
+--     end)()
+--
+--     opts.format_on_save = function(bufnr)
+--       -- Disable with a global or buffer-local variable
+--       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+--         return
+--       end
+--
+--       local formatter = format_utils.biome_or_prettier(bufnr)
+--       if formatter[1] == "biome" then
+--         return { timeout_ms = 500, lsp_fallback = true, async = false }
+--       end
+--       return false
+--     end
+--
+--     -- Add Biome formatter
+--     -- opts.formatters = opts.formatters or {}
+--     opts.formatters.biome = {
+--       command = "biome",
+--       args = { "check", "--write", "$FILENAME" }, --  ← this was the magic that fixed organizing imports
+--       stdin = false,
+--     }
+--
+--     return opts
+--   end,
+-- }
